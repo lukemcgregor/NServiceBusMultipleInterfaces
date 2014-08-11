@@ -1,18 +1,14 @@
-﻿using NsbInterfaces.Events;
-using NServiceBus;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace NsbInterfaces.Subscriber
+﻿namespace NsbInterfaces.Subscriber
 {
-	public class MyHandler : IHandleMessages<ISomeOtherInterface>
+    using System;
+    using Events;
+    using NServiceBus;
+
+    public class MyHandler : IHandleMessages<ISomeOtherInterface>
 	{
 		public void Handle(ISomeOtherInterface message)
 		{
-			Console.WriteLine("Message received");
+            Console.WriteLine("ISomeOtherInterface Message received");
 		}
 	}
 }

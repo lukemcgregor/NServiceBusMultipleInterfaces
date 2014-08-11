@@ -1,10 +1,10 @@
-﻿using NsbInterfaces.Publisher.Events;
-using NServiceBus;
-using System;
-
-namespace NsbInterfaces.Publisher
+﻿namespace NsbInterfaces.Publisher
 {
-	class Program
+    using System;
+    using Events;
+    using NServiceBus;
+
+    class Program
 	{
 		static void Main(string[] args)
 		{
@@ -27,6 +27,7 @@ namespace NsbInterfaces.Publisher
 			bus.Publish(new MyEvent());
 
 			Console.WriteLine("Press esc to exit, or any other key to send an event");
+
 			while(Console.ReadKey().Key != ConsoleKey.Escape)
 			{
 				bus.Publish(new MyEvent());

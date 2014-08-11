@@ -1,18 +1,13 @@
-﻿using Ninject;
-using NServiceBus;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace NsbInterfaces.Subscriber
+﻿namespace NsbInterfaces.Subscriber
 {
-	class Program
+    using System;
+    using NServiceBus;
+
+    class Program
 	{
 		static void Main(string[] args)
 		{
-			var kernel = new StandardKernel();
+			//var kernel = new StandardKernel();
 
 			Configure.Features.Disable<NServiceBus.Features.TimeoutManager>().Disable<NServiceBus.Features.SecondLevelRetries>();
 			Configure.With()
